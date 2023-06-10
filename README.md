@@ -1,7 +1,6 @@
 # Biometria
 
 Temat: Rozpoznawanie twarzy wg. metody Fishera
-
 Autorzy: Aleksandra Chrzanowska, Piotr Chmura
 
 Projekt na zajęcia z Biometri na Uniwersytecie Jagielońskim na wydziale Fizyki, Astronomii i Informatyki stosowanej.
