@@ -25,7 +25,7 @@ Algorytm ten opiera się na obliczeniach macierzy kowariancji wewnątrzklasowej 
 
 Ogólne kroki algorytmu:
 
-1. Przygotowanie danych treningowych: Algorytm Fischer wymaga zbioru danych treningowych, które składają się z obrazów twarzy wraz z odpowiadającymi im        etykietami (np. identyfikatorami osób). Każda twarz musi być reprezentowana jako wektor cech.
+1. Przygotowanie danych treningowych: Algorytm Fischer wymaga zbioru danych treningowych, które składają się z obrazów twarzy wraz z odpowiadającymi im etykietami (np. identyfikatorami osób). Każda twarz musi być reprezentowana jako wektor cech.
 
 2. Obliczanie średniej twarzy: Na początku oblicza się średnią twarz na podstawie zbioru danych treningowych. Średnia twarz jest obliczana jako średnia wartość pikseli dla wszystkich twarzy w zbiorze treningowym.
 
