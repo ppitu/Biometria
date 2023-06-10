@@ -25,19 +25,19 @@ Algorytm ten opiera się na obliczeniach macierzy kowariancji wewnątrzklasowej 
 
 Ogólne kroki algorytmu:
 
-    1. Przygotowanie danych treningowych: Algorytm Fischer wymaga zbioru danych treningowych, które składają się z obrazów twarzy wraz z odpowiadającymi im        etykietami (np. identyfikatorami osób). Każda twarz musi być reprezentowana jako wektor cech.
+1. Przygotowanie danych treningowych: Algorytm Fischer wymaga zbioru danych treningowych, które składają się z obrazów twarzy wraz z odpowiadającymi im        etykietami (np. identyfikatorami osób). Każda twarz musi być reprezentowana jako wektor cech.
 
-    2. Obliczanie średniej twarzy: Na początku oblicza się średnią twarz na podstawie zbioru danych treningowych. Średnia twarz jest obliczana jako średnia wartość pikseli dla wszystkich twarzy w zbiorze treningowym.
+2. Obliczanie średniej twarzy: Na początku oblicza się średnią twarz na podstawie zbioru danych treningowych. Średnia twarz jest obliczana jako średnia wartość pikseli dla wszystkich twarzy w zbiorze treningowym.
 
-    3. Obliczanie macierzy kowariancji: Następnie oblicza się macierz kowariancji na podstawie danych treningowych. Macierz ta zawiera informacje o zależnościach między pikselami na twarzach.
+3. Obliczanie macierzy kowariancji: Następnie oblicza się macierz kowariancji na podstawie danych treningowych. Macierz ta zawiera informacje o zależnościach między pikselami na twarzach.
 
-    4. Obliczanie wektorów własnych: Algorytm Fishera wykorzystuje analizę głównych składowych (PCA) do obliczenia wektorów własnych. Wektory własne są obliczane na podstawie macierzy kowariancji i reprezentują kierunki największej wariancji w danych treningowych.
+4. Obliczanie wektorów własnych: Algorytm Fishera wykorzystuje analizę głównych składowych (PCA) do obliczenia wektorów własnych. Wektory własne są obliczane na podstawie macierzy kowariancji i reprezentują kierunki największej wariancji w danych treningowych.
 
-    5. Obliczanie wektorów Fishera: W tym kroku wykorzystuje się analizę dyskryminacyjną Fishera (LDA), aby przekształcić wektory własne PCA w tzw. wektory Fishera. Wektory Fishera są obliczane tak, aby maksymalizować odległość między różnymi klasami twarzy, a jednocześnie minimalizować wariancję wewnątrzklasową.
+5. Obliczanie wektorów Fishera: W tym kroku wykorzystuje się analizę dyskryminacyjną Fishera (LDA), aby przekształcić wektory własne PCA w tzw. wektory Fishera. Wektory Fishera są obliczane tak, aby maksymalizować odległość między różnymi klasami twarzy, a jednocześnie minimalizować wariancję wewnątrzklasową.
 
-    6. Redukcja wymiarów: W celu zmniejszenia złożoności obliczeniowej i redukcji wymiarowości danych można wybrać tylko kilka najważniejszych wektorów Fishera. Ostateczna reprezentacja twarzy jest tworzona przez projekcję twarzy treningowych na wybrane wektory Fishera.
+6. Redukcja wymiarów: W celu zmniejszenia złożoności obliczeniowej i redukcji wymiarowości danych można wybrać tylko kilka najważniejszych wektorów Fishera. Ostateczna reprezentacja twarzy jest tworzona przez projekcję twarzy treningowych na wybrane wektory Fishera.
 
-    7. Klasyfikacja: Po redukcji wymiarowości danych, można zastosować klasyfikator, tak jak w przypadku innych metod rozpoznawania twarzy, aby przyporządkować nową twarz do jednej z klas na podstawie porównania z twarzami treningowymi.
+7. Klasyfikacja: Po redukcji wymiarowości danych, można zastosować klasyfikator, tak jak w przypadku innych metod rozpoznawania twarzy, aby przyporządkować nową twarz do jednej z klas na podstawie porównania z twarzami treningowymi.
 
 Algorytm Fishera jest wykorzystywany do rozpoznawania twarzy w różnych zastosowaniach, takich jak systemy monitoringu, systemy kontroli dostępu i identyfikacja osób na zdjęciach. Pozwala on na efektywne wyodrębnienie istotnych cech twarzy i skuteczne rozpoznawanie.
 
