@@ -43,4 +43,8 @@ Algorytm Fishera jest wykorzystywany do rozpoznawania twarzy w różnych zastoso
 
 ## Projekt
 
-## Wnioski
+Projekt został napisany w języku C++ z wykorzystaniem biblioteki OpenCV do przetarzania obrazu w czasie rzeczywistym.
+
+Model został stworzony za pomocą FisherFaceRecognizer::create() i wytrenowany przy pomocy wektorów właśnych (Eigenvectors)
+
+Do treningu jest wykorzystanych 39 z 40 klas, a jako test jest sprawdzana jedna z klas, które nie uczestniczy w trenowaniu modelu
