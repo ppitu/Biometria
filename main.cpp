@@ -85,13 +85,6 @@ int main(int argc, const char *argv[]) {
 	model->train(images, labels);
 	
 	int predictedLabel = model->predict(testSample);
-	//
-	// To get the confidence of a prediction call the model with:
-	//
-	//      int predictedLabel = -1;
-	//      double confidence = 0.0;
-	//      model->predict(testSample, predictedLabel, confidence);
-	//
 	
 	string result_message = format("Predicted class = %d / Actual class = %d.", predictedLabel, testLabel);
 	cout << result_message << endl;
