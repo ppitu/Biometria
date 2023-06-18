@@ -2,6 +2,7 @@
 #include "opencv2/face.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -47,14 +48,14 @@ static void read_csv(const string& filename, vector<Mat>& images, vector<int>& l
 
 int main(int argc, const char *argv[]) {
 	
-	if (argc < 2) {
-		cout << "usage: " << argv[0] << " <csv.ext> <output_folder> " << endl;
+	if (argc < 3) {
+		cout << "usage: " << argv[0] << " <csv.ext> <output_folder> <test_image>" << endl;
 		exit(1);
 	}
 
 	string output_folder = ".";
 	
-	if (argc == 3) {
+	if (argc == 4) {
 		output_folder = string(argv[2]);
 	}
 
@@ -75,11 +76,11 @@ int main(int argc, const char *argv[]) {
 	}
 
 	int height = images[0].rows;
-	Mat testSample = images[images.size() - 1];
-	int testLabel = labels[labels.size() - 1];
+	//Mat testSample = images[images.size() - 1];
+	//int testLabel = labels[labels.size() - 1];
 	
-	images.pop_back();
-	labels.pop_back();
+	//images.pop_back();
+	//labels.pop_back();
 	Ptr<FisherFaceRecognizer> model = FisherFaceRecognizer::create();
 	
 	model->train(images, labels);
@@ -88,8 +89,15 @@ int main(int argc, const char *argv[]) {
 	
 	string result_message = format("Predicted class = %d / Actual class = %d.", predictedLabel, testLabel);
 	cout << result_message << endl;
+
 	
-	Mat eigenvalues = model->getEigenValues();
+	
+	//std::string str = format("Class: %d", predictedLabel);
+	
+	//cv::putText(testSample, str, cv::Point(10, testSample.rows / 2), cv::FONT_HERSHEY_DUPLEX, 0.5, CV_RGB(118, 185, 0), 2);
+	//cv::imwrite(format("%s/predic.png", output_folder.c_str()), testSample);
+	
+	/*Mat eigenvalues = model->getEigenValues();
 	Mat W = model->getEigenVectors();
 	Mat mean = model->getMean();
 	
@@ -123,7 +131,7 @@ int main(int argc, const char *argv[]) {
 		} else {
 			imwrite(format("%s/fisherface_reconstruction_%d.png", output_folder.c_str(), num_component), reconstruction);
 		}
-	}
+		}*/
 
 	return 0;
 }
